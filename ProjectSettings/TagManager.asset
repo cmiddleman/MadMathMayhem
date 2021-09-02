@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Paper
+  - Pencil
+  - Pen
+  - Score
+  - Health
+  - Background
+  - Coin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2303853123
+    locked: 0
+  - name: Misc
+    uniqueID: 2510487321
+    locked: 0
+  - name: Enemy
+    uniqueID: 362091745
+    locked: 0
+  - name: Health
+    uniqueID: 3457057141
+    locked: 0
+  - name: Player
+    uniqueID: 1771775593
+    locked: 0
+  - name: UI
+    uniqueID: 1521144891
+    locked: 0
