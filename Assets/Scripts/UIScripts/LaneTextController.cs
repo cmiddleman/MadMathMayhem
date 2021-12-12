@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LaneTextController : MonoBehaviour
 {
-    private Vector3 startPos;
+    public Vector3 startPos;
     private Vector3 pos;
     private Vector3 scale;
     private float animTime;
@@ -15,6 +15,8 @@ public class LaneTextController : MonoBehaviour
     private float timeSinceStart;
     private Text text;
 
+    private bool firstFrame;
+
     private bool runAnim;
     
     private RectTransform rect;
@@ -23,7 +25,7 @@ public class LaneTextController : MonoBehaviour
     {
         rect = gameObject.GetComponent<RectTransform>();
         text = gameObject.GetComponent<Text>();
-        startPos = rect.position;
+        rect.anchoredPosition = startPos;
         pos = startPos;
         scale = rect.localScale;
         runAnim = false;
@@ -35,8 +37,10 @@ public class LaneTextController : MonoBehaviour
 
        //@TODO make targetPos legit, dunno why issues with center in recttransform.
         Debug.Log(targetPos);
-      //  targetPos = Camera.main.ScreenToWorldPoint(targetPos);
-       // Debug.Log(targetPos);
+        //  targetPos = Camera.main.ScreenToWorldPoint(targetPos);
+        // Debug.Log(targetPos);
+
+        firstFrame = true;
     }
 
     // Update is called once per frame
@@ -64,7 +68,7 @@ public class LaneTextController : MonoBehaviour
     private void Move()
     {
         pos = Vector3.MoveTowards(pos, targetPos, speed * Time.deltaTime);
-        rect.position = pos;
+        rect.anchoredPosition = pos;
 
         scale += scaleRate * Time.deltaTime * new Vector3(1f, 1f, 0f);
         rect.localScale = scale;
@@ -76,7 +80,7 @@ public class LaneTextController : MonoBehaviour
     {
         timeSinceStart = 0;
         runAnim = false;
-        rect.position = startPos;
+        rect.anchoredPosition = startPos;
         pos = startPos;
         scale = new Vector3(1f, 1f, 1f);
         rect.localScale = scale;
